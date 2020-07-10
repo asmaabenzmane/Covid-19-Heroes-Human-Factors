@@ -1,0 +1,35 @@
+>points_chauds(12,Co_19)
+> View(points_chauds)
+> points_chauds(12,Co_19)
+> Co_19 <- read.csv("C:/Users/hp/Documents/covid19.csv")
+> points_chauds <- function(n,mat){
++   ptc<- rep(0,n)
++   m<- mean(mat$nombre_des_cas_9jui)
++   for(i in 1:n){
++     if(mat$nombre_des_cas_9jui[i]>m){
++       ptc[i]=1
++     }
++     else{
++       ptc[i]=0
++     }
++   }
++   ptc
++   matm <- cbind(mat,ptc)
++   print(matm)
++ }
+> 
+> points_chauds(12,Co_19)
+                        nombre_des_cas_9jui ptc
+Tanger Tetouan Houceima                 123   1
+Laayoune Sakya Lhamra                    49   1
+Marrakech Safi                           46   1
+Casablanca Settat                        43   1
+Fes Meknes                               31   1
+Guelmim ouad Noun                         6   0
+Sous Massa                                5   0
+Rabat Salé Kenitra                        3   0
+Est                                       2   0
+Daraa Tafilalt                            0   0
+Beni Malal Khenifra                       0   0
+Dakhla Ouadi Dahab                        0   0
+> 
